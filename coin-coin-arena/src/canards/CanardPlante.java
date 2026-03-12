@@ -15,8 +15,8 @@ public class CanardPlante extends CanardDeCombat{
     }
 
     public void regenerer() {
-            int pvRestores = (int) (getPvMax() * 0.1);
-            setPvActuel(getPvActuel() + pvRestores);
+        int pvRestores = (int) (getPvMax() * 0.2);
+        setPvActuel(getPvActuels() + pvRestores);
     }
 
     @Override

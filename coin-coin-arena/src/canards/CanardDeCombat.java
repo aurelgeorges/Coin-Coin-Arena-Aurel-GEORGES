@@ -1,6 +1,9 @@
 package canards;
 
-public abstract class CanardDeCombat {
+import status.*;
+
+public abstract class CanardDeCombat implements Soignable, Combattant
+{
     private String nom;
     private String surnom;
     private final int pvMax;
@@ -22,7 +25,7 @@ public abstract class CanardDeCombat {
         return pvMax;
     }
 
-    public int getPvActuel() {
+    public int getPvActuels() {
         return pvActuel;
     }
 
