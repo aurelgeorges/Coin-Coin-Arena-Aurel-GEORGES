@@ -42,6 +42,19 @@ public abstract class CanardDeCombat {
         this.surnom = surnom;
     }
 
+    public void setPvActuel(int pvActuel){
+        if(pvActuel < 0){
+           this.pvActuel = 0;
+
+        } else if(pvActuel > pvMax){
+            this.pvActuel = pvMax;
+
+        } else {
+            this.pvActuel = pvActuel;
+        }
+
+    }
+
     public CanardDeCombat(String nom, String prenom, int pvMax, int atck) {
         if(pvMax <= 0){
             throw new AssertionError("PV MAX du canard ne peuvent pas être négatif ou égal à 0");
