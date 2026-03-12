@@ -85,19 +85,30 @@ public abstract class CanardDeCombat {
             pvActuel = 0;
         }
 
-        System.out.printf("%s subit %s dégâts ! (PV: %s/%s)", surnom, degats, pvActuel, pvMax);
+        System.out.printf("\n%s subit %s dégâts ! (PV: %s/%s)%n", surnom, degats, pvActuel, pvMax);
     }
 
     public void soigner(){
         pvActuel = pvMax;
     }
 
-    public void attaquer(CanardDeCombat cible){
+    public double etreAttaqueePar(CanardFeu attaquant) { return 1.0;}
+    public double etreAttaqueePar(CanardEau attaquant) { return 1.0; }
+    public double etreAttaqueePar(CanardPlante attaquant) { return 1.0;}
+    public double etreAttaqueePar(CanardClassique attaquant) { return 1.0; }
 
+    protected void effectuerAttaque(CanardDeCombat cible, double mult) {
+        int degats = (int)(getAtck() * mult);
+        System.out.println(getSurnom() + " attaque " + cible.getSurnom()
+                + " ! (" + getType() + " → " + cible.getType()
+                + " : x" + mult + ") → " + degats + " dégâts");
+        cible.subirDegats(degats);
     }
+
+    public abstract void attaquer(CanardDeCombat cible);
 
     @Override
     public String toString() {
-        return String.format("[%s] %s «%s» (PV: %s/%s |" + "ATK: %s)", getType(), nom, surnom, pvActuel, pvMax, atck);
+        return  String.format("[%s] %s «%s» (PV: %s/%s |" + "ATK: %s)", getType(), nom, surnom, pvActuel, pvMax, atck);
     }
 }

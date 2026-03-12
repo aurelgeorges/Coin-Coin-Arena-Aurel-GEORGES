@@ -18,4 +18,25 @@ public class CanardPlante extends CanardDeCombat{
             int pvRestores = (int) (getPvMax() * 0.1);
             setPvActuel(getPvActuel() + pvRestores);
     }
+
+    @Override
+    public double etreAttaqueePar(CanardFeu attaquant) {
+        return 2.0;
+    }
+
+    @Override
+    public double etreAttaqueePar(CanardEau attaquant) {
+        return 0.5;
+    }
+
+    @Override
+    public double etreAttaqueePar(CanardPlante attaquant) {
+        return 0.5;
+    }
+
+    @Override
+    public void attaquer(CanardDeCombat cible) {
+        double mult = cible.etreAttaqueePar(this);
+        effectuerAttaque(cible, mult);
+    }
 }

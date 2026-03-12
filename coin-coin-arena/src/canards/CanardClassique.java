@@ -10,6 +10,12 @@ public class CanardClassique extends CanardDeCombat{
     }
 
     @Override
+    public void attaquer(CanardDeCombat cible) {
+        double mult = cible.etreAttaqueePar(this);
+        effectuerAttaque(cible, mult);
+    }
+
+    @Override
     public String getType() {
         return "Normal";
     }

@@ -9,13 +9,34 @@ public class CanardFeu extends CanardDeCombat{
         if(intensiteFlamme < 0.8 || intensiteFlamme > 1.5){
             throw new AssertionError("L'intensité de la flamme doit être comprise entre 0.8 et 1.5");
         }
+        this.intensiteFlamme = intensiteFlamme;
     }
 
     public CanardFeu(String nom, String prenom) {
         this(nom, prenom, 50, 13, 0.8);
     }
 
+    @Override
+    public double etreAttaqueePar(CanardEau attaquant) {
+        return 2.0;
+    }
 
+    @Override
+    public double etreAttaqueePar(CanardPlante attaquant) {
+        return 0.5;
+    }
+
+    @Override
+    public double etreAttaqueePar(CanardFeu attaquant) {
+        return 0.5;
+    }
+
+    @Override
+    public void attaquer(CanardDeCombat cible) {
+        double mult = cible.etreAttaqueePar(this) * intensiteFlamme;
+        System.out.println(mult);
+        effectuerAttaque(cible, mult);
+    }
 
     @Override
     public String getType() {
