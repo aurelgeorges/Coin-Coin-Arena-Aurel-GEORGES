@@ -1,13 +1,21 @@
 package canards;
 
-public class CanardFeu extends CanardDeCombat{
+public class CanardFeu extends CanardDeCombat {
+
     private double intensiteFlamme;
 
-
-    public CanardFeu(String nom, String prenom, int pvMax, int atck, double intensiteFlamme) {
+    public CanardFeu(
+        String nom,
+        String prenom,
+        int pvMax,
+        int atck,
+        double intensiteFlamme
+    ) {
         super(nom, prenom, pvMax, atck);
-        if(intensiteFlamme < 0.8 || intensiteFlamme > 1.5){
-            throw new AssertionError("L'intensité de la flamme doit être comprise entre 0.8 et 1.5");
+        if (intensiteFlamme < 0.8 || intensiteFlamme > 1.5) {
+            throw new AssertionError(
+                "L'intensité de la flamme doit être comprise entre 0.8 et 1.5"
+            );
         }
         this.intensiteFlamme = intensiteFlamme;
     }
@@ -34,7 +42,6 @@ public class CanardFeu extends CanardDeCombat{
     @Override
     public void attaquer(CanardDeCombat cible) {
         double mult = cible.etreAttaqueePar(this) * intensiteFlamme;
-        System.out.println(mult);
         effectuerAttaque(cible, mult);
     }
 

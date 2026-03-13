@@ -1,6 +1,7 @@
 package canards;
 
-public class CanardClassique extends CanardDeCombat{
+public class CanardClassique extends CanardDeCombat {
+
     public CanardClassique(String nom, String prenom, int pvMax, int atck) {
         super(nom, prenom, pvMax, atck);
     }
@@ -19,5 +20,4 @@ public class CanardClassique extends CanardDeCombat{
     public String getType() {
         return "Normal";
     }
-
 }

@@ -56,7 +56,7 @@ public class Equipe {
     }
 
     public void afficher() {
-        System.out.println("Équipe de " + nomDresseur + " :");
+        System.out.println("\n===Équipe de " + nomDresseur + "===");
         for (int i = 0; i < canards.length; i++) {
             if (canards[i] != null) {
                 System.out.println((i + 1) + ". " + canards[i]);
@@ -73,5 +73,9 @@ public class Equipe {
             }
         }
         return true;
+    }
+
+    public String getNomDresseur() {
+        return nomDresseur;
     }
 }

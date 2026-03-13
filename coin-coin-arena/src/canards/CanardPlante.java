@@ -1,6 +1,7 @@
 package canards;
 
-public class CanardPlante extends CanardDeCombat{
+public class CanardPlante extends CanardDeCombat {
+
     public CanardPlante(String nom, String prenom, int pvMax, int atck) {
         super(nom, prenom, pvMax, atck);
     }

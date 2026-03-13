@@ -1,9 +1,16 @@
 package canards;
 
 public class CanardConfus extends CanardEau {
+
     boolean enrage = false;
 
-    public CanardConfus(String nom, String prenom, int pvMax, int atck, int pressionJet) {
+    public CanardConfus(
+        String nom,
+        String prenom,
+        int pvMax,
+        int atck,
+        int pressionJet
+    ) {
         super(nom, prenom, pvMax, atck, pressionJet);
     }
 
@@ -14,7 +21,7 @@ public class CanardConfus extends CanardEau {
     @Override
     public void attaquer(CanardDeCombat cible) {
         double mult = cible.etreAttaqueePar(this);
-        if(enrage){
+        if (enrage) {
             mult *= 2.0;
             enrage = false;
         }
@@ -22,13 +29,15 @@ public class CanardConfus extends CanardEau {
         if (Math.random() < 0.3) {
             int selfDamage = (int) (getAtck() * 0.5);
             setPvActuel(getPvActuels() - selfDamage);
-            System.out.println(getNom() + " est confus ! Il se cogne la tête... Coin coin ?");
+            System.out.println(
+                getNom() + " est confus ! Il se cogne la tête... Coin coin ?"
+            );
         } else {
             effectuerAttaque(cible, mult);
         }
     }
 
-    public void migraine(){
+    public void migraine() {
         System.out.println(getNom() + " se tient la tête... COIN. COIN.");
         enrage = true;
     }

@@ -21,3 +21,6 @@ Cela va permettre de créer d'autres objets qui seront soignable et combattant, 
 
 ### Réflexion R5
 Il y aurait une douzaine de classes à créer, et beaucoup de duplication (coucou le S de SOLID). Pourquoi pas faire une interface "Confus" ?
+
+### Reflexion R6
+Oui, l'utilisation de `instanceof` révèle souvent une conception fragile, cela enfreint le principe Open/Close, car chaque nouveau malus/bonus impose d'ajouter encore des tests conditionnels.
