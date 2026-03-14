@@ -11,7 +11,7 @@ public abstract class CanardDeCombat implements Soignable, Combattant {
     private int atck;
 
     private static int nbCanardsCrees;
-    private static int ATK_MIN = 5;
+    private static final int ATK_MIN = 5;
 
     public String getNom() {
         return nom;

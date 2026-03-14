@@ -26,11 +26,11 @@ public enum TypeCanard {
 
     // Table de multiplicateurs [attaquant][cible]
     private static final double[][] TABLETYPE = {
-        { 1.0, 0.5, 2.0, 1.0 },  // FEU
-        { 2.0, 1.0, 0.5, 1.0 },  // EAU
-        { 0.5, 2.0, 1.0, 1.0 },  // PLANTE
-        { 1.0, 1.0, 1.0, 1.0 },  // NORMAL
-        { 1.5, 1.5, 1.5, 1.0 }   // VOLCAN
+        { 1.0, 0.5, 2.0, 1.0, 0.5 },  // FEU
+        { 2.0, 1.0, 0.5, 1.0, 0.5 },  // EAU
+        { 0.5, 2.0, 1.0, 1.0, 0.5 },  // PLANTE
+        { 1.0, 1.0, 1.0, 1.0, 0.5 },  // NORMAL
+        { 1.5, 1.5, 1.5, 1.0, 0.5 }   // VOLCAN
     };
 
     private final String libelle;
