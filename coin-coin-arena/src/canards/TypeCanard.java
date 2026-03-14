@@ -1,3 +1,5 @@
+package canards;
+
 public enum TypeCanard {
     FEU("Feu"),
     EAU("Eau"),

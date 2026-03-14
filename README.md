@@ -32,3 +32,9 @@ Enfin, les vérifications instanceof sur des classes deviennent obsolètes. Il s
 
 ### Réflexion R8
 La composition de la partie B semble beaucoup plus maintenable que l'approche par héritage, car elle permet d'avoir la table des types centralisé alors que l'héritage, nécéssite de modifier pleins de sous-classes
+
+### Réflexion R9
+Dans la partie A il va donc exister 50 copies des stats des canards. Alors quand dans la partie B il va exister uniquement 50 références qui pointeront sur la même zone mémoire qui contient ces statistiques.
+
+### Réflexion R10
+La partie B est manifestement celle qui respect plus le principe OPEN/CLOSE, car nous n'avons pas à modifier les sous-classes afin de rajouter un type.
