@@ -18,7 +18,7 @@ public class Canard implements Combattant_B, Soignable {
         this.atk = espece.getAtkBase();
     }
 
-    public TypeCanard getType () {
+    public TypeCanard getType() {
         return espece.getType();
     }
 
@@ -81,11 +81,21 @@ public class Canard implements Combattant_B, Soignable {
         return surnom;
     }
 
-    public void finDeTour() {
-        if (this.getType() == TypeCanard.PLANTE) {
-            int soin = (int) (this.pvMax * 0.10);
-            this.pvActuels = Math.min(this.pvMax, this.pvActuels + soin);
-            System.out.println(this.surnom + " se régénère de " + soin + " PV !");
-        }
+    public void setPvActuels(int pvActuels) {
+        this.pvActuels = pvActuels;
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "[%s] %s «%s» (PV: %s/%s |" + "ATK: %s)",
+                getType(),
+                espece.getNom(),
+                surnom,
+                pvActuels,
+                pvMax,
+                atk
+        );
+    }
+
 }

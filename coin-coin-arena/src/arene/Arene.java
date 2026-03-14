@@ -69,8 +69,9 @@ public class Arene {
                 System.out.println(canardE1.getSurnom() + " de " + equipe1.getNomDresseur() + " est envoyé au combat !");
             }
 
-            canardE1.finDeTour();
-            canardE2.finDeTour();
+            //Possibilité de le gérer dans la classe Canard aussi.
+            canardE1.getType().finDeTour(canardE1);
+            canardE2.getType().finDeTour(canardE2);
         }
 
         System.out.println(

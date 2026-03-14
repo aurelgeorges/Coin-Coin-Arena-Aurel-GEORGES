@@ -1,5 +1,5 @@
 package canards;
-import canards.TypeCanard;
+
 
 public class EspeceCanard {
     private final String nom; // ex. "Canard Flamme"
@@ -40,4 +40,5 @@ public class EspeceCanard {
     public static final EspeceCanard CANARD_MARIN = new EspeceCanard("Canard Marin", TypeCanard.EAU, 44, 48,"Un canard qui maîtrise les courants.");
     public static final EspeceCanard CANARD_MOUSSE = new EspeceCanard("Canard Mousse", TypeCanard.PLANTE, 45, 49, "Un canard recouvert de mousse régénérante.");
     public static final EspeceCanard CANARD_CLASSIQUE = new EspeceCanard("Canard Classique", TypeCanard.NORMAL, 50, 45, "Le bon vieux canard jaune. Indémodable.");
+    public static final EspeceCanard CANARD_VOLCAN = new EspeceCanard("Canard Volcan", TypeCanard.VOLCAN, 60, 60, "Un canard qui a été forgé dans les entrailles d'un volcan. Il est extrêmement puissant mais subit des dégâts de brûlure à chaque tour.");
 }

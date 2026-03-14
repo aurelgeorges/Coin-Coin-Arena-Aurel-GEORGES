@@ -5,10 +5,39 @@ import equipe.Equipe;
 public class Main {
 
     public static void main(String[] args) {
-        Canard c1 = new Canard(EspeceCanard.CANARD_FLAMME, "Duck");
-        Canard c2 = new Canard(EspeceCanard.CANARD_CLASSIQUE, "Daffy");
 
-        c1.attaquer(c2);
+        //1. Créez des canards à partir des espèces prédéfinies.
+        Canard c1 = new Canard(EspeceCanard.CANARD_MARIN, "Kainard");
+        Canard c2 = new Canard(EspeceCanard.CANARD_CLASSIQUE, "Ratanard");
+
+        //2. Montrez qu’on peut créer plusieurs canards de la même espèce (deux “Canard Flamme” différents avec des surnoms différents).
+        Canard c3 = new Canard(EspeceCanard.CANARD_FLAMME, "Flambo");
+        Canard c4 = new Canard(EspeceCanard.CANARD_FLAMME, "Braise");
+
+        //3. Faites combattre deux équipes.
+        Equipe equipeRed = new Equipe("Red");
+        Equipe equipeBlue = new Equipe("Blue");
+
+        equipeRed.ajouter(new Canard(EspeceCanard.CANARD_FLAMME, "Canacendre"));
+        equipeRed.ajouter(new Canard(EspeceCanard.CANARD_MOUSSE, "Tortinard"));
+        equipeRed.ajouter(new Canard(EspeceCanard.CANARD_FLAMME, "Oustinard"));
+
+        equipeBlue.ajouter(new Canard(EspeceCanard.CANARD_MOUSSE, "Verdunard"));
+        equipeBlue.ajouter(new Canard(EspeceCanard.CANARD_MARIN, "Hydranard"));
+        equipeBlue.ajouter(new Canard(EspeceCanard.CANARD_MARIN, "Marinard"));
+
+        equipeBlue.afficher();
+        equipeRed.afficher();
+
+        System.out.println("\n=== COMBAT ===");
+        Arene.combattre(equipeRed, equipeBlue);
+
+        //4. Ajoutez une nouvelle espèce et un nouveau type en quelques lignes, sans créer de classe
+        Canard c5 = new Canard(EspeceCanard.CANARD_VOLCAN, "Volcanard");
+        System.out.println("\nCréation d'un nouveau canard de type Volcan :");
+        System.out.println(c5);
+
+
     }
 
     static void mainA() {
