@@ -8,8 +8,8 @@ public class Arene {
     public static void combattre(Equipe equipe1, Equipe equipe2) {
         Equipe equipeGagnant = null;
         int nbtours = 0;
-        CanardDeCombat canardE1 = equipe1.getPremierValide();
-        CanardDeCombat canardE2 = equipe2.getPremierValide();
+        Canard canardE1 = equipe1.getPremierValide();
+        Canard canardE2 = equipe2.getPremierValide();
 
         System.out.println("");
 
@@ -43,6 +43,8 @@ public class Arene {
             }
 
             System.out.println();
+
+            //Bon il y a une duplication de code mais je pense que c'est nécéssaire pour que le déroulement du combat reste explicite dans le code.
             canardE2.attaquer(canardE1);
 
             if (canardE2.estKO()) {
@@ -67,40 +69,13 @@ public class Arene {
                 System.out.println(canardE1.getSurnom() + " de " + equipe1.getNomDresseur() + " est envoyé au combat !");
             }
 
-            if(canardE1 instanceof CanardPlante){
-                ((CanardPlante) canardE1).regenerer();
-            }
-
-            if(canardE2 instanceof CanardPlante) {
-                ((CanardPlante) canardE2).regenerer();
-            }
+            canardE1.finDeTour();
+            canardE2.finDeTour();
         }
 
         System.out.println(
             "\nL'équipe gagnante est : " + equipeGagnant.getNomDresseur() + " en " + nbtours + " tours !\n"
         );
         equipeGagnant.afficher();
-    }
-
-    static void main() {
-        Equipe equipe1 = new Equipe("Donald");
-        Equipe equipe2 = new Equipe("Daisy");
-
-        equipe1.ajouter(new CanardFeu("Flambo", "Fifi", 70, 16, 1.1));
-        equipe1.ajouter(new CanardConfus("Trouble", "Lulu", 60, 14, 12));
-        equipe1.ajouter(new CanardPlante("Verdure", "Riri", 75, 13));
-
-        equipe2.ajouter(new CanardEau("Splash", "Dewey", 68, 15, 11));
-        equipe2.ajouter(new CanardClassique("Basic", "Huey", 72, 14));
-        equipe2.ajouter(new CanardFeu("Braise", "Louie", 65, 17, 1.0));
-
-        equipe1.afficher();
-
-        equipe2.afficher();
-
-        System.out.println("\n=== COMBAT ===");
-        Arene.combattre(equipe1, equipe2);
-
-        System.out.println("Nombre total de canards créés : " + CanardDeCombat.getNbCanardsCrees());
     }
 }

@@ -76,4 +76,16 @@ public class Canard implements Combattant_B, Soignable {
     public int getPvMax() {
         return pvMax;
     }
+
+    public String getSurnom() {
+        return surnom;
+    }
+
+    public void finDeTour() {
+        if (this.getType() == TypeCanard.PLANTE) {
+            int soin = (int) (this.pvMax * 0.10);
+            this.pvActuels = Math.min(this.pvMax, this.pvActuels + soin);
+            System.out.println(this.surnom + " se régénère de " + soin + " PV !");
+        }
+    }
 }

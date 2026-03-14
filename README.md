@@ -37,4 +37,14 @@ La composition de la partie B semble beaucoup plus maintenable que l'approche pa
 Dans la partie A il va donc exister 50 copies des stats des canards. Alors quand dans la partie B il va exister uniquement 50 références qui pointeront sur la même zone mémoire qui contient ces statistiques.
 
 ### Réflexion R10
-La partie B est manifestement celle qui respect plus le principe OPEN/CLOSE, car nous n'avons pas à modifier les sous-classes afin de rajouter un type.
+La partie B est manifestement celle qui respecte plus le principe OPEN/CLOSE, car nous n'avons pas à modifier les sous-classes afin de rajouter un type.
+
+### Réflexion R11
+(a) Le test `canard.getType() == TypeCanard.PLANTE` de la Partie B survivrait à la suppression d'une classe. À l'inverse, l'instanceof de la Partie A provoquerait une erreur de compilation si la classe CanardPlante n'existait plus (après si on supprime la ligne dans l'énum, le test `getType` n'y survivrait pas non plus).
+
+(b) Personnellement et dans ce cas je trouve les deux compréhensibles mais il est vrai que de voir des instance of est rebutant. Donc la Partie B reste plus lisible.
+
+(c) Pour la partie A, comme pour tout, il faudrait redéfinir une méthode finDeTour dans chaque classe de type de canard. Dans la partie B, on aurait autant de méthode à définir mais centralisé dans l'Enum comme vous le proposez.
+
+
+
