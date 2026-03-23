@@ -5,7 +5,7 @@
 
 <img src="img/part_a_uml.png"/>
 
-Bon, j'ai répondu à chaque reflexion dans le fichier [REFLEXIONS.md](REFLEXIONS.md), mais pas vraiment aux questions que vous avez listées... Je laisse l'IA reformuler et compléter, je pense avoir bien compris les enjeux du TP à ce stade.
+Bon, j'ai répondu à chaque reflexion dans le fichier [REFLEXIONS.md](REFLEXIONS.md), mais pas vraiment aux questions que vous avez listées dans la partie 16/17/18... Je laisse l'IA reformuler et compléter, je pense avoir bien compris les enjeux du TP à ce stade.
 
 **Pourquoi CanardDeCombat est-elle abstraite ? Qu’empêche-t-on et que garantit-on ?**
 
